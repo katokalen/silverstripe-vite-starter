@@ -1,0 +1,46 @@
+version: '3.9'
+services:
+
+  web:
+    # PHP version should match version in .platform.yml and composer.json
+    image: brettt89/silverstripe-web:8.1-apache
+    volumes:
+      - ./src:/var/www/html/:cached
+    ports:
+      - "80:80"
+    links:
+      - "database"
+
+  database:
+    image: mysql/mysql-server:8.0
+    ports:
+      - "3306-3307:3306-3307"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=one-yellow-rabbit
+
+  node:
+    # Node version should match d-yarn.sh and .nvmrc
+    image: "node:gallium"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
+      - VITE_ENVIRONMENT=development
+    env_file:
+      - .env
+    volumes:
+      - ./:/home/node/app:cached
+      - '.:/node_modules'
+    ports:
+      - '5173:5173'
+    expose:
+      - '5173'
+    links:
+      - "web"
+    command: bash -c "yarn install; npx browserslist@latest --update-db; yarn build; yarn start-docker"
+
+volumes:
+  node_modules:
