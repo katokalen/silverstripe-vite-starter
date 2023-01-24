@@ -1,0 +1,43 @@
+.tiles {
+  @apply py-8 bg-gray-100;
+  h2 {
+    @apply text-black mb-8;
+  }
+  .tile {
+    @apply md:w-1/3 block mb-8;
+    .tile-inner {
+      @apply bg-slate h-full m-2 relative;
+    }
+    .tile-image {
+      @apply bg-slate;
+      img {
+        @apply bg-cover;
+      }
+    }
+    .tile-content {
+      @apply bg-slate text-white px-8 pt-6 pb-10;
+    }
+    img {
+      transition: transform 300ms ease-in-out;
+    }
+    .icon-wrapper {
+      @apply absolute bottom-2 right-4;
+    }
+    .icon-arrowRight {
+      transition: padding 500ms ease;
+      display: inline-block;
+      @apply pr-1;
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+      .icon-arrowRight {
+        @apply pr-0;
+        svg path {
+          fill: theme("colors.red.light");
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,158 @@
+/* Global Footer */
+.footer {
+  @apply mt-10 lg:mt-24;
+  hr {
+    @apply border-gray-500;
+  }
+}
+
+/* Top white section */
+.footer-community {
+  @apply bg-center-top md:bg-cover bg-no-repeat pt-48 md:pt-72;
+
+  .container-1 {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-4 pt-16 pb-16;
+  }
+  .hashtag {
+    @apply text-red-light font-normal block lg:inline-block;
+  }
+  .social {
+    @apply lg:flex lg:space-x-4 pt-8;
+  }
+  .social-links {
+    @apply xs:flex xs:space-x-4;
+  }
+  .juicer {
+    @apply w-full;
+  }
+
+  /* Important stuff is here due to Juicer plugin (External) */
+  .slick-track {
+    @apply w-full left-0 !important;
+  }
+  .feed-item {
+    @apply w-full sm:w-1/2 sm:px-2 !important;
+  }
+  .slick-arrow {
+    @apply hidden !important;
+  }
+}
+
+/* Bottom Slate section - contains 2 navs & content */
+.footer-nav {
+  @apply bg-slate text-white;
+  .container-1 {
+    @apply grid lg:grid-cols-2 gap-4 pt-14 lg:pt-16 lg:pb-0;
+  }
+  .container-2 {
+    @apply grid lg:grid-cols-2 gap-8 md:gap-4 pt-6 pb-6;
+  }
+  .container-3 {
+    @apply grid gap-4 pb-8 lg:pb-24 lg:pt-8;
+  }
+}
+
+/* First footer menu - larger links */
+.footer-menu-1 {
+  @apply mb-9 md:mb-0 md:w-7/12;
+  .item {
+    @apply mb-5 md:mb-10;
+  }
+  .link {
+    @apply font-normal;
+  }
+  .link svg {
+    @apply opacity-0 h-7;
+
+    transition: 0.3s ease-out;
+  }
+  .link:hover {
+    @apply no-underline;
+    svg {
+      @apply text-red-light opacity-100;
+    }
+  }
+  svg {
+    display: inline;
+  }
+}
+
+/* Buckets of content on right side (sustainability) */
+.footer-content {
+  .footer-content-grid {
+    @apply flex flex-wrap;
+  }
+  .item {
+    @apply w-full md:w-1/2;
+  }
+  .title {
+    @apply md:mt-0;
+  }
+  .title a {
+    @apply underline underline-offset-4;
+
+    transition: 0.3s ease-out;
+    &:hover {
+      @apply decoration-slate;
+    }
+  }
+  .copy {
+    @apply text-gray-300 mb-10 mt-4 lg:mb-16;
+  }
+}
+
+/* Second Footer menu - smaller links */
+.footer-menu-2 {
+  @apply w-7/12;
+  .item {
+    @apply mb-2 md:mb-5;
+  }
+  .link {
+    @apply font-normal hover:underline;
+  }
+}
+
+/* Image Buckets that link our to other CMH digital properties */
+.footer-buckets {
+  @apply grid md:grid-cols-2 gap-x-4;
+  .bucket {
+    @apply relative w-full h-auto overflow-hidden bg-cover;
+  }
+  .bucket-link {
+    @apply block;
+    &:hover {
+      .overlay {
+        @apply from-slate/70 to-slate/70;
+      }
+      .btn-text {
+        background-position: 0 90%;
+      }
+      svg {
+        @apply translate-x-1;
+      }
+    }
+  }
+  .overlay {
+    @apply h-auto bg-gradient-to-b from-slate/50 to-slate/50 absolute w-full inset-0;
+
+    transition: 0.5s;
+  }
+  .link {
+    @apply right-4 top-auto bottom-3 absolute;
+    svg path {
+      @apply fill-white;
+    }
+  }
+}
+.footer-utility {
+  @apply text-xs lg:grid lg:grid-flow-col lg:auto-cols-auto;
+  .utility-left {
+    @apply lg:flex lg:space-x-4;
+  }
+  .utility-right {
+    @apply lg:text-right;
+  }
+  .utility-links {
+    @apply flex pb-4 lg:pb-0 space-x-4;
+  }
+}

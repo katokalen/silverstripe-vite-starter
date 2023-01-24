@@ -1,0 +1,28 @@
+.image-gallery {
+  @apply py-8 md:pt-20 md:pb-8 text-white;
+
+  /* Flickity modifications */
+  .flickity-button {
+    background: transparent;
+  }
+  .flickity-prev-next-button {
+    @apply -top-10 hidden sm:block;
+    &:hover {
+      @apply bg-transparent;
+    }
+    &.previous {
+      @apply left-auto right-14;
+    }
+    &.next {
+      @apply right-6;
+    }
+  }
+  .flickity-slider {
+    .gallery-item {
+      @apply w-[90%] sm:w-auto;
+    }
+  }
+  .gallery-item {
+    @apply mx-2 relative;
+  }
+}

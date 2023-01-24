@@ -1,0 +1,32 @@
+/* *
+NOTE:
+Assumption is that the image-caption is always in the same bottom right position on top of the image.
+*/
+.image-caption {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 14px;
+  overflow: hidden;
+  z-index: 20;
+  .caption-wrapper {
+    @apply flex flex-row-reverse items-center overflow-hidden rounded-lg relative;
+  }
+  .caption-icon {
+    @apply bg-slate p-1 z-1 rounded-lg;
+    svg path {
+      @apply fill-white;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .caption-text {
+    @apply flex-col items-center flex pt-2 pb-2 pl-3 pr-6 bg-slate rounded-l-lg;
+
+    max-width: 400px;
+  }
+  .caption {
+    @apply relative text-white pr-4;
+  }
+}

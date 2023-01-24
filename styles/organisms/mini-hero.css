@@ -1,0 +1,67 @@
+/* Mini Hero */
+.hero-mini {
+  @apply border-b border-b-gray-300 relative w-full;
+  @screen md {
+    height: 300px;
+  }
+  &.light {
+    .hero-gradient {
+      background:
+        linear-gradient(
+          90deg,
+          rgb(34 35 40 / 90%) 25%,
+          rgb(34 35 40 / 0%) 80%
+        );
+    }
+    .heading,
+    .wysiwyg > * {
+      @apply text-white;
+    }
+  }
+  &.dark {
+    .heading,
+    .wysiwyg > * {
+      @apply text-slate;
+    }
+  }
+  .hero-gradient {
+    @apply flex flex-wrap content-center w-full;
+    @screen md {
+      @apply absolute;
+
+      height: 300px;
+    }
+  }
+  .background-image {
+    @apply w-full h-full absolute object-cover object-center;
+
+    animation: fadein 2s ease-out forwards;
+  }
+  .hero-content {
+    @apply py-12;
+  }
+  .content-container {
+    @apply px-6 lg:w-3/4;
+  }
+  .heading {
+    @apply mb-0 opacity-0;
+
+    animation: fadein 1s ease-out 0.5s forwards;
+  }
+  .wysiwyg {
+    @apply opacity-0;
+
+    animation: fadein 1s ease-out 0.75s forwards;
+    p {
+      @apply text-xl;
+    }
+  }
+  .mini-hero-links {
+    @apply mt-10;
+    a {
+      @apply mr-4 opacity-0;
+
+      animation: fadein 1s ease-out 1s forwards;
+    }
+  }
+}

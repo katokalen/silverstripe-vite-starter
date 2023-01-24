@@ -1,0 +1,98 @@
+.cmh-carousel {
+  @apply relative pt-20 pb-8 pl-5 xl:pl-40 my-12;
+  &.default {
+    .cmh-carousel-bg {
+      @apply bg-gray-200 bg-cover bg-no-repeat absolute bg-center top-0 left-0 h-5/6 w-full sm:w-3/4 -z-1;
+    }
+  }
+
+  /* Flickity modifications */
+  .flickity-button {
+    background: transparent;
+  }
+  .flickity-prev-next-button {
+    @apply -top-[41px];
+    &:hover {
+      @apply bg-transparent;
+    }
+    &.previous {
+      @apply left-auto right-14;
+    }
+    &.next {
+      @apply right-6;
+    }
+  }
+
+  /* Card styling */
+  .card {
+    @apply bg-slate text-white mr-4 min-h-full;
+    .card-inner {
+      @apply relative w-[360px] min-h-[450px] md:min-h-[645px] sm:w-[420px] sm:min-h-[695px];
+    }
+    .card-content {
+      @apply text-white px-8 pt-9 pb-9;
+    }
+    .duration {
+      @apply m-0 mr-6;
+      p {
+        @apply text-sm text-gray-200 border border-solid border-gray-700 p-2 my-0;
+      }
+    }
+    .h4 {
+      @apply mb-16;
+    }
+    .h6 {
+      @apply font-normal;
+    }
+    ul {
+      li {
+        @apply h2;
+      }
+    }
+    .description {
+      @apply lg:pr-20;
+    }
+    .card-meta {
+      @apply flex items-center lg:absolute lg:bottom-8;
+    }
+    .attributes {
+      li {
+        @apply flex items-center border-b border-solid border-gray-700 mb-0;
+        .trip-icon {
+          @apply mr-5;
+        }
+        .label {
+          @apply block p-small text-gray-300 font-normal;
+        }
+        .trip-content {
+          @apply my-3;
+        }
+      }
+    }
+    .summary {
+      @apply text-sm lg:text-base;
+    }
+  }
+  &.trip {
+    .cmh-carousel-bg {
+      @apply bg-gray-200 bg-cover bg-no-repeat absolute bg-center top-0 left-0 h-5/6 w-full sm:w-3/4 -z-1;
+    }
+    h2 {
+      @apply mb-4;
+    }
+    .programs-indicator {
+      @apply sm:flex sm:justify-end sm:items-start mr-8;
+      p {
+        @apply mr-24 font-bold;
+      }
+    }
+  }
+  &.carousel-items-1 {
+    .flickity-prev-next-button {
+      @apply hidden;
+    }
+    .programs-indicator p {
+      @apply mr-2;
+    }
+  }
+}

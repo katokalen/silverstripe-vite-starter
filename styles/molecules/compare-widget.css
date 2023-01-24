@@ -1,0 +1,26 @@
+.compare-widget {
+  .compare-widget-inner {
+    @apply px-5 md:px-10 lg:flex lg:items-center lg:justify-between py-14 w-full lg:container;
+  }
+  .compare-widget-header {
+    @apply flex items-center justify-start lg:max-w-[200px];
+    .cmh-icon {
+      @apply mr-4;
+    }
+    h2 {
+      @apply m-0;
+    }
+  }
+  .compare-widget-form {
+    @apply flex lg:justify-end;
+    select {
+      @apply mt-5 lg:mt-0 mr-2 sm:mr-4 xl:mr-16 border-0 border-b-2;
+      &:nth-of-type(3) {
+        @apply hidden sm:inline-block;
+      }
+    }
+    button {
+      @apply mt-5 lg:mt-0;
+    }
+  }
+}

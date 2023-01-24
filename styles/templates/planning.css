@@ -1,0 +1,36 @@
+/* Planning Section Pages Layout - has 2 columns, breadcrumb, sidenav and some content blocks */
+.planning-wrapper {
+  @apply container grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-8 mt-10;
+}
+.planning-left-rail {
+  @apply lg:col-span-1 order-last lg:order-first;
+}
+.planning-right-rail {
+  @apply lg:col-span-3 order-first lg:order-last;
+}
+
+/* Overrides for certain content blocks nested in the right rail */
+.planning {
+  .accordion-container,
+  .table-wrapper,
+  .columned-content .wrapper {
+    @apply lg:max-w-none lg:pr-0 lg:pl-0;
+  }
+  @media (max-width: 820px) {
+    iframe {
+      @apply w-full;
+    }
+  }
+}
+.planning-sub-landing {
+  .title,
+  .subtitle {
+    @apply font-normal;
+  }
+  .child-pages {
+    @apply mt-10;
+  }
+  .child-page-link {
+    @apply pb-2;
+  }
+}

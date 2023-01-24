@@ -1,0 +1,165 @@
+/* Hero Banner Styles */
+
+/* Global Values */
+.hero {
+  @apply bg-opacity-25 relative w-full;
+}
+
+/* Global Values across both types */
+.hero-variant {
+  @apply bg-no-repeat bg-contain w-full relative;
+
+  z-index: 1;
+  .background-image {
+    @apply w-full h-full absolute object-cover object-center;
+  }
+  .background-video {
+    @apply w-full h-full absolute object-cover object-center;
+  }
+  .hero-content {
+    @apply w-full opacity-0;
+    .subheading {
+      @apply mt-0 mb-0 font-normal;
+    }
+    .heading {
+      @apply mt-0 mb-5;
+    }
+  }
+  .video-control {
+    @apply absolute;
+
+    bottom: 12px;
+    right: 12px;
+    z-index: 20;
+    svg {
+      width: 36px;
+      height: 36px;
+      .play-1,
+      .play-2 {
+        opacity: 0;
+      }
+    }
+  }
+  .explore-link {
+    @apply text-sm leading-3;
+  }
+}
+
+/* Default Variant - Hero Content can be light or dark (configurable in CMS)
+Layered Variant - always "light" */
+.hero-variant.light {
+  .hero-gradient {
+    background:
+      linear-gradient(
+        45deg,
+        rgb(0 0 0 / 60%) 0%,
+        rgb(0 0 0 / 0%) 70%
+      );
+  }
+  .background-image > *,
+  .background-video-wrapper > *,
+  .hero-gradient > *,
+  .hero-content > * {
+    @apply text-white;
+  }
+  .btn-text {
+    @apply text-white;
+  }
+}
+.hero-variant.dark {
+  .hero-gradient {
+    background:
+      linear-gradient(
+        45deg,
+        rgb(255 255 255 / 90%) 0%,
+        rgb(255 255 255 / 0%) 70%
+      );
+  }
+  .background-image > *,
+  .background-video-wrapper > *,
+  .hero-gradient > *,
+  .hero-content > * {
+    @apply text-slate;
+  }
+}
+
+/* Default Hero Styles */
+.hero-variant.default {
+  min-height: 500px;
+  @screen md {
+    min-height: 810px;
+  }
+  .hero-gradient {
+    @apply flex flex-wrap content-end w-full absolute top-0;
+
+    min-height: 500px;
+    @screen md {
+      min-height: 810px;
+    }
+  }
+  .hero-content {
+    @apply max-w-3xl md:ml-20 ml-5 mb-10;
+  }
+  .explore-link {
+    @apply absolute bottom-0 text-center my-3;
+
+    left: 40%;
+    @screen md {
+      left: 48%;
+    }
+    svg {
+      @apply h-5 ml-1;
+    }
+  }
+  .explore-target {
+    @apply absolute bottom-8 h-8;
+  }
+}
+
+/* Layered Variant Styles */
+.hero-variant.layered {
+  @apply h-full mb-32;
+  .hero-content-left {
+    @apply ml-2 lg:ml-5;
+  }
+  .heading {
+    @apply w-11/12 md:w-3/4;
+  }
+  .hero-content-top {
+    @apply w-full xs:grid grid-flow-col gap-8 pt-6 pb-6 z-1;
+  }
+  .hero-foreground-img {
+    @apply -mb-20 aspect-w-1 aspect-h-1 lg:aspect-w-16 lg:aspect-h-9 z-1 self-start overflow-hidden;
+    &.foreground-img-100 {
+      @apply w-full;
+    }
+    &.foreground-img-75 {
+      @apply w-3/4;
+    }
+  }
+  .caption-wrapper {
+    top: 92%;
+    right: 1rem;
+    @apply relative;
+  }
+  .hero-foreground-wrapper {
+    @apply pt-5 ml-5 mr-5 md:pt-24 lg:mr-12 lg:ml-12 2xl:mr-24 2xl:ml-24 h-full;
+    .hero-content {
+      @apply flex flex-col items-end h-full;
+    }
+  }
+  .hero-content-right {
+    @apply xs:flex xs:items-end xs:justify-end xs:mr-5;
+  }
+  .hero-badge-img {
+    @apply ml-5 sm:ml-20;
+  }
+  .explore-link {
+    @apply mb-0;
+  }
+
+  /* If no foreground image or video */
+  &.no-foreground {
+    @apply mb-16 h-[85vh];
+  }
+}

@@ -1,0 +1,3 @@
+.divider {
+  @apply my-8 lg:my-16;
+}

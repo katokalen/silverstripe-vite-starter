@@ -1,0 +1,22 @@
+{
+  "../../images/javascript.svg": {
+    "file": "images/javascript.svg",
+    "src": "../../images/javascript.svg"
+  },
+  "../../scripts/main.js": {
+    "file": "main.js",
+    "src": "../../scripts/main.js",
+    "isEntry": true,
+    "css": [
+      "style.css"
+    ],
+    "assets": [
+      "images/javascript.svg"
+    ]
+  },
+  "../../styles/style.css": {
+    "file": "style.css",
+    "src": "../../styles/style.css",
+    "isEntry": true
+  }
+}

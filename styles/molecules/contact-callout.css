@@ -1,0 +1,35 @@
+.contact-callout {
+  @apply bg-gray-100 pb-12 pt-12 md:pt-16;
+  .contact-callout-wrapper {
+    @apply md:grid md:grid-cols-3 md:gap-3;
+  }
+  .heading-1 {
+    @apply mb-8;
+  }
+  .heading-2 {
+    @apply hidden h5 md:block;
+  }
+  .heading-3 {
+    @apply hidden h5 md:block;
+  }
+  .phone-number-label {
+    @apply mb-1 font-normal h4 hidden md:block;
+  }
+  .btn-1 {
+    @apply mb-4 md:mb-10 lg:mb-0;
+    svg path {
+      @apply fill-white;
+    }
+  }
+  .btn-2 {
+    @apply mb-4 md:hidden bg-transparent;
+    svg path {
+      @apply fill-black;
+    }
+    &:hover {
+      svg path {
+        @apply fill-white;
+      }
+    }
+  }
+}

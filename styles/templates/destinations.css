@@ -1,0 +1,114 @@
+.destination-tabs-desktop {
+  @apply hidden bg-black h-full 2lg:block;
+  nav {
+    @apply border-r border-solid border-gray-300 px-7 pt-10 pb-32 h-full bg-slate;
+
+    min-width: 300px;
+    ul {
+      @apply mb-8;
+      li {
+        @apply block mb-2 2xl:mb-4 text-white;
+        a {
+          @apply text-2xl 2xl:text-4xl font-normal text-gray-300 flex;
+          svg {
+            @apply h-4 lg:h-7 opacity-0 ml-2 mt-0.5;
+
+            transition: 0.3s ease-out;
+          }
+          &.active,
+          &:hover {
+            @apply text-white;
+          }
+          &:hover {
+            svg {
+              @apply text-red-light opacity-100;
+            }
+          }
+        }
+      }
+    }
+  }
+  .destination-details {
+    @apply bg-left-top bg-no-repeat bg-cover w-full;
+    .item {
+      @apply h-full p-24 hidden;
+      .item-content {
+        @apply text-white opacity-0 transition-opacity ease-linear duration-1000;
+        .attributes {
+          li {
+            @apply flex items-center border-b border-solid border-gray-700 mb-0;
+            .trip-icon {
+              @apply mr-5;
+            }
+            .trip-content {
+              @apply pt-3 pb-1;
+              > span {
+                @apply block text-sm text-gray-300;
+              }
+              h6 {
+                @apply text-white;
+              }
+            }
+          }
+        }
+        .buttons {
+          @apply mt-12;
+          .btn-primary {
+            @apply mr-4;
+          }
+        }
+        .image-wrapper {
+          @apply pt-12 xl:pt-0 xl:px-12 xl:-mb-2;
+        }
+      }
+      &.default {
+        @apply flex justify-start;
+        .item-content {
+          @apply pr-6 pt-24 opacity-100;
+          p {
+            @apply text-xl;
+          }
+        }
+      }
+      &.active {
+        @apply flex h-full bg-cover;
+        .item-content {
+          @apply opacity-100;
+        }
+      }
+    }
+  }
+}
+.destination-tabs-mobile {
+  @apply 2lg:hidden;
+  .section-heading {
+    @apply container pt-8 pb-4;
+    p {
+      @apply mt-0 h4 font-normal;
+    }
+  }
+  .group-heading {
+    @apply container pt-8;
+    h2 {
+      @apply mt-4;
+    }
+    p {
+      @apply mt-0;
+    }
+  }
+  .cta-blocks {
+    @apply px-1 sm:container sm:px-0 w-full flex flex-wrap justify-start;
+    .tile {
+      @apply relative;
+      .tile-image {
+        @apply p-2;
+      }
+      .tile-content {
+        @apply pb-0 px-8 pt-10;
+      }
+      .icon-wrapper {
+        @apply absolute bottom-3 right-5;
+      }
+    }
+  }
+}

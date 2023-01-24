@@ -1,0 +1,24 @@
+.in-page-feature {
+  @apply lg:container flex flex-col-reverse md:flex-row max-w-8xl mx-4 my-5 lg:mx-auto;
+  .col {
+    @screen md {
+      width: 50%;
+      max-width: 50%;
+    }
+  }
+  .col-content {
+    @apply py-10 px-10 md:pr-16 xl:pr-24 text-white h-full flex flex-col justify-end;
+    h2 {
+      @apply mb-0;
+    }
+    p {
+      @apply text-gray-200;
+    }
+  }
+  .right-side {
+    @apply bg-cover bg-no-repeat bg-center;
+  }
+  .col-image {
+    @apply p-5 md:-ml-8 md:p-10 md:pl-0;
+  }
+}

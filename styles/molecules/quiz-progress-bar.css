@@ -1,0 +1,34 @@
+.quiz-progress-bar {
+  &-wrapper {
+    @apply bg-center bg-no-repeat bg-cover;
+  }
+  &-container {
+    @apply py-10;
+  }
+  @apply grid grid-rows-2 lg:grid-rows-1 grid-cols-6;
+  &-title {
+    @apply col-start-1 col-end-7 sm:col-start-2 sm:col-end-6 lg:col-start-1 lg:col-end-3;
+    h5 {
+      @apply mb-0;
+    }
+  }
+  .progress-bar {
+    @apply row-start-2 lg:row-start-1 col-start-1 col-end-7 sm:col-start-2 sm:col-end-6 lg:col-start-3 lg:col-end-5 flex justify-between items-end relative;
+    &::after {
+      content: "";
+      @apply block border border-slate absolute bottom-3 w-full -mt-[1px];
+    }
+  }
+  .progress-bar-circle {
+    @apply h-7 w-7 border-2 border-slate rounded-full bg-gray-200 z-1 flex justify-center items-center;
+    &.dotted {
+      @apply border-red-light;
+    }
+    &.filled {
+      @apply bg-red-light border-red-light;
+    }
+  }
+  .progress-bar-circle-dot {
+    @apply bg-red-light rounded-full h-3 w-3;
+  }
+}

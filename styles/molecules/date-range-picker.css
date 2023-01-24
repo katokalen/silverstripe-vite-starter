@@ -1,0 +1,71 @@
+.DateRangePicker {
+  @apply w-full;
+  .DateRangePickerInput_arrow {
+    @apply hidden;
+  }
+  .DateRangePickerInput {
+    @apply w-full;
+    @apply bg-transparent border-0;
+  }
+  .DateInput {
+    @apply bg-transparent w-[49%] sm:w-auto;
+  }
+  .DateInput_input {
+    @apply py-2 px-3 text-base font-normal;
+  }
+  .CalendarDay {
+    @apply border-r-0;
+  }
+  .CalendarDay__selected,
+  .CalendarDay__selected:active,
+  .CalendarDay__selected:hover,
+  .CalendarDay__selected_span:active,
+  .CalendarDay__selected_span:hover,
+  .CalendarDay__hovered_span:hover {
+    @apply bg-gray-700 border-gray-700 text-white border-r-0;
+  }
+  .CalendarDay__hovered_span {
+    @apply bg-gray-500 border-gray-700 text-white border-r-0;
+  }
+  .CalendarDay__selected_span {
+    @apply bg-gray-500 border-gray-700 border-r-0;
+  }
+  .DateRangePicker_picker {
+    @media (max-width: 640px) {
+      @apply w-full flex justify-center;
+
+      box-shadow: 0 2px 6px rgb(0 0 0 / 5%), 0 0 0 1px rgb(0 0 0 / 7%);
+    }
+    .DayPicker {
+      @media (max-width: 640px) {
+        box-shadow: none;
+      }
+    }
+  }
+  .calendar-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 320px;
+    @media (min-width: 640px) {
+      display: block;
+      margin-top: 85px;
+      max-width: none;
+    }
+    button {
+      background: none;
+      display: block;
+      width: 100%;
+      text-align: center;
+      color: black;
+      font-size: 1rem;
+      flex: 50%;
+      margin: 0 0 1rem;
+      @media (min-width: 640px) {
+        padding-right: 0.8rem;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

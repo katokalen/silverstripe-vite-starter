@@ -1,0 +1,9 @@
+@import "./global/base.css";
+@import "tailwindcss/components";
+@import "./oyr-components.css";
+@import "tailwindcss/utilities";
+@import "./global/utilities.css";
+
+/* .quote {
+  background-color: purple;
+} */

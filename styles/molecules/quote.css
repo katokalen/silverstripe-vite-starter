@@ -1,0 +1,27 @@
+.quote {
+  @apply bg-black my-8 py-8 md:my-12 md:py-16 min-h-[800px] bg-cover bg-no-repeat lg:bg-center overflow-hidden;
+  h2 {
+    @apply text-[56px] leading-[48px] md:text-[68px] md:leading-[58px] lg:text-[156px] lg:leading-[119px] xl:text-[191px] xl:leading-[145px] text-gray-300 uppercase font-bold opacity-50 2xl:-ml-20;
+    span {
+      @apply block;
+    }
+  }
+  .quote-container {
+    @apply lg:flex lg:items-center lg:-mt-16;
+  }
+  &__media {
+    @apply w-full lg:w-[50%] lg:max-w-[50%];
+  }
+  &__content {
+    @apply lg:w-[50%] lg:max-w-[50%] text-white md:ml-20;
+    blockquote {
+      @apply md:pr-[25%] bg-[url("/images/quote-mark.svg")] bg-left-top bg-no-repeat pt-10 mt-8;
+      p {
+        @apply text-3xl lg:text-5xl font-semibold;
+      }
+    }
+    figcaption {
+      @apply text-sm;
+    }
+  }
+}

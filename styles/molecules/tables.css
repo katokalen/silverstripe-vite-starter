@@ -1,0 +1,43 @@
+/* Default Table styling */
+.table {
+  @apply border-collapse table-auto w-full text-sm bg-white;
+
+  /* Different border options for tables */
+  &.default {
+    th,
+    td {
+      @apply border border-gray-200;
+    }
+  }
+  &.horizontal-only {
+    @apply border-l border-r border-gray-200;
+    td {
+      @apply border border-l-0 border-r-0 border-t border-b border-gray-200;
+    }
+  }
+  &.vertical-only {
+    @apply border-l border-r border-b border-gray-200;
+    td {
+      @apply border border-t-0 border-b-0 border-l border-r border-gray-200;
+    }
+  }
+  th {
+    @apply p-4 text-white text-left bg-black font-bold;
+  }
+  td {
+    @apply p-4 text-slate text-left;
+  }
+  td.td-line {
+    @apply p-0 text-slate text-left;
+  }
+}
+
+/* Any custom table styling for overrides can go here */
+.vertical-table {
+  .row td:first-of-type {
+    @apply text-left;
+  }
+  td {
+    @apply text-center;
+  }
+}

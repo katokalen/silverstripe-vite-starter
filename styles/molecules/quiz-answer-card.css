@@ -1,0 +1,67 @@
+.quiz-answer-card {
+  @apply border border-gray-300 border-2 p-8 m-2 min-w-[252px] min-h-[252px] md:max-w-[calc(25%-1rem)] flex flex-col text-center;
+  .quiz-question-3 & {
+    @apply sm:min-w-[calc(350px)];
+  }
+  &.label-only {
+    @apply justify-center;
+    .quiz-answer-card-body {
+      @apply grow-0;
+    }
+  }
+  &:hover {
+    @apply cursor-pointer;
+  }
+  &.selected,
+  &:focus,
+  &:hover {
+    @apply border-slate;
+    .cmh-icon {
+      path {
+        @apply fill-slate;
+      }
+    }
+    h5,
+    p {
+      @apply text-slate;
+    }
+  }
+  &s {
+    @apply -mx-2 md:flex justify-center flex-wrap;
+    &.container-wrap {
+      @apply xl:justify-start;
+      & > .quiz-answer-card {
+        @apply basis-[calc(25%-1rem)];
+      }
+    }
+  }
+  &-head {
+    @apply h-fit mb-8 flex justify-center;
+  }
+  &-body {
+    @apply grow;
+    h5 {
+      @apply mb-0 text-center text-gray-700;
+    }
+    p {
+      @apply m-0 text-left text-gray-700;
+    }
+    h5 + p {
+      @apply mt-4 text-center;
+    }
+  }
+  &-footer {
+    @apply mt-6;
+  }
+  &-video-modal {
+    .video-wrapper {
+      @apply relative sm:pb-[56.25%];
+      iframe {
+        @apply sm:absolute top-0 left-0 w-full h-full;
+      }
+    }
+    &.modal-lightbox .modal-close {
+      @apply -top-7;
+    }
+  }
+}

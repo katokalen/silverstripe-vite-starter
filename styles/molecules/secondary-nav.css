@@ -1,0 +1,42 @@
+.secondary-nav {
+  @apply py-3.5 px-4 md:px-8 flex items-center w-full bg-white border-y relative justify-between lg:justify-start;
+  &.secondary-nav-scrolled {
+    @apply sticky border-t-0 z-10;
+
+    top: 61px;
+    @screen md {
+      top: 69px;
+    }
+  }
+  p {
+    @apply text-xl uppercase m-0;
+  }
+  .right-side {
+    @apply flex items-center lg:ml-12;
+    &.active {
+      .right-side-dropdown-button {
+        @apply rotate-180;
+      }
+    }
+    &-links {
+      @apply hidden lg:flex;
+    }
+    &-dropdown-button {
+      @apply transition-transform duration-500 lg:hidden;
+    }
+  }
+  &-links {
+    li {
+      @apply md:mr-8 mb-4 lg:mb-0;
+      &:last-child {
+        @apply md:mr-0 mb-0;
+      }
+    }
+    a {
+      @apply lg:block pb-0.5 border-b-2 border-slate;
+    }
+  }
+  &-dropdown {
+    @apply hidden lg:!hidden opacity-0 border-y border-gray-300 lg:border-y-0 absolute lg:relative top-full w-full left-0 right-0 bg-white z-10 px-4 md:px-8 lg:px-0 pt-4 pb-6 lg:py-0;
+  }
+}

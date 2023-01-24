@@ -1,0 +1,18 @@
+.disruption-banner {
+  @apply bg-black bg-cover bg-no-repeat bg-center;
+  .wrapper {
+    @apply flex items-center;
+  }
+  .content {
+    @apply w-full ml-9 flex sm:items-center py-12 justify-between flex-col sm:flex-row ;
+  }
+  .wysiwyg {
+    @apply text-white font-normal pr-0 sm:pr-8;
+    p {
+      @apply text-lg md:text-xl m-0;
+    }
+  }
+  .cta {
+    @apply pt-4 sm:pt-0 flex-shrink-0;
+  }
+}

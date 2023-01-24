@@ -1,0 +1,42 @@
+.trip-feature {
+  &.cta-blocks {
+    @apply py-0 gap-y-5;
+  }
+
+  /* Styles for both */
+  .icons-list {
+    @apply grid grid-cols-3 items-stretch divide-x text-white text-xs sm:text-sm md:text-xs lg:text-sm mb-10;
+  }
+  .icons-list li {
+    @apply flex flex-col px-5 border-gray-300;
+    &:nth-of-type(1) {
+      @apply pl-0;
+      .cmh-icon {
+        @apply inline-flex items-center;
+
+        min-height: 48px;
+      }
+    }
+    &:nth-of-type(3) {
+      @apply pr-0;
+    }
+  }
+
+  /* Half size Variant */
+  .tile {
+    @apply mb-5;
+    @screen 2xl {
+      width: 50%;
+      max-width: 50%;
+    }
+  }
+
+  /* Full Width Variant */
+
+  /* Note: Most of this styling is inside of .in-page-feature */
+  &.full {
+    .col-content {
+      @apply w-full;
+    }
+  }
+}

@@ -1,0 +1,151 @@
+@tailwind base;
+@layer base {
+  body {
+    font-family: "Inter", sans-serif;
+    @apply text-black leading-relaxed font-normal text-base bg-white;
+  }
+
+  /* Heading 1 36/44 mobile, 48/56 tablet, 56/64 desktop */
+  h1,
+  .h1 {
+    @apply text-5xl md:text-7xl lg:text-8xl mb-4 font-semibold;
+  }
+
+  /* Heading 2 30/36 mobile, 32/40 tablet, 36/44 desktop */
+  h2,
+  .h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl mb-4 font-semibold bg-red;
+  }
+
+  /* Heading 3 24/32 tablet & mobile, 32/40 desktop */
+  h3,
+  .h3 {
+    @apply text-2xl md:text-4xl mb-4 font-semibold;
+  }
+
+  /* Heading 4 21/28 tablet & mobile, 24/32 desktop */
+  h4,
+  .h4 {
+    @apply text-xl md:text-2xl mb-4 font-semibold;
+  }
+
+  /* Heading 5 18/26 tablet &; mobile, 21/28 desktop */
+  h5,
+  .h5 {
+    @apply text-lg md:text-xl mb-4 font-semibold;
+  }
+
+  /* Heading 6 16/24 tablet & mobile, 18/26 desktop */
+  h6,
+  .h6 {
+    @apply text-base md:text-lg mb-2 font-bold;
+  }
+
+  /* 16/24 for all breakpoints */
+  p {
+    @apply text-base my-6;
+  }
+  a {
+    @apply cursor-pointer;
+  }
+}
+
+/* Typography */
+
+/* 56/64 mobile, 80/88 tablet, 104/112 desktop */
+.display-1 {
+  @apply text-8xl md:text-10xl lg:text-11xl my-2 sm:my-5 md:my-10;
+}
+
+/* 44/52 mobile, 64/72 tablet, 80/88 desktop */
+.display-2 {
+  @apply text-6xl md:text-9xl lg:text-10xl my-2 sm:my-4 md:my-8;
+}
+
+/* 12/16 all breskpoints */
+.caption {
+  @apply text-xs;
+}
+
+/* 14/20 all breakpoints */
+.p-small {
+  @apply text-sm;
+}
+
+/* 21/28 all breakpoints */
+.p-large {
+  @apply text-xl;
+}
+
+/* Icons */
+.cmh-icon {
+  svg {
+    @apply h-6; /* 24px */
+  }
+  &.small svg {
+    @apply h-5; /* 20px */
+  }
+  &.medium svg {
+    @apply h-8; /* 32px */
+  }
+  &.large svg {
+    @apply h-12; /* 48px */
+  }
+  &.xlarge svg {
+    @apply h-24; /* 88px */
+  }
+}
+
+/* WYSIWYG Editor styling (rich text editor using portable text */
+.wysiwyg {
+  .underline-text {
+    @apply underline underline-offset-1 decoration-black;
+
+    transition: 0.3s ease-out;
+    &:hover {
+      @apply decoration-white;
+    }
+  }
+  p.p-less-padding {
+    @apply my-3;
+  }
+  ul {
+    @apply list-disc list-outside mt-4 mb-4 ml-4;
+  }
+  ol {
+    @apply list-decimal list-outside mt-4 mb-4 ml-4;
+  }
+  hr {
+    @apply mt-10 mb-10;
+  }
+
+  /* Add some spacing between buttons if they are multiple inline ones */
+  p > .wysiwyg-btn {
+    margin-right: 1rem;
+  }
+
+  /* Embedded Icons in wysiwyg should display at 48x48, not our default 24x24 */
+  .wysiwyg-icon svg {
+    @apply h-12 mb-2;
+  }
+  .modal-launcher {
+    cursor: pointer;
+  }
+  a + .modal-launcher {
+    @apply ml-3 sm:ml-6;
+  }
+  .caption {
+    @apply mb-0;
+  }
+}
+.image-blur-container {
+  @apply bg-no-repeat bg-cover inline-block;
+}
+.image-blur-container.full {
+  @apply w-full h-full;
+}
+
+/* Override for Columned Content */
+.columned-content .image .image-blur-container.full {
+  @apply max-w-full w-auto h-auto;
+}

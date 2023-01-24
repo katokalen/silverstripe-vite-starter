@@ -1,0 +1,93 @@
+.conditions {
+  &-item {
+    @apply py-12 border-b border-solid border-gray-200;
+    h2 {
+      @apply mb-8;
+    }
+    .columns {
+      @apply flex flex-wrap;
+      .column {
+        @apply w-full lg:w-1/3 flex mt-8 lg:items-end;
+        &.no-temperature,
+        &.no-forecast {
+          @apply lg:mt-0 flex-col;
+          h3 {
+            @apply text-xl font-semibold;
+          }
+          p {
+            @apply text-lg pr-14 font-normal;
+          }
+        }
+        .cmh-icon.large svg {
+          height: 5rem;
+        }
+        h3 {
+          @apply text-gray-800;
+          span {
+            @apply block text-lg font-normal mb-2 text-slate;
+          }
+        }
+        p {
+          @apply text-sm mt-0 pr-10 text-gray-800;
+        }
+        .buttons {
+          @apply mt-4 lg:text-right;
+          a {
+            @apply lg:ml-8 xl:ml-4;
+            &:first-child {
+              @apply mr-4 lg:mr-0 mb-4 xl:mb-0;
+            }
+          }
+        }
+        &:first-child {
+          @apply items-start mt-0;
+        }
+        &:last-child {
+          @apply lg:justify-end;
+        }
+      }
+    }
+  }
+  &-modal-content-wrapper {
+    .modal-body {
+      .title-wrapper {
+        @apply mb-8;
+        .icon-weather svg {
+          @apply h-10;
+        }
+        h4 {
+          @apply mt-3 mb-0;
+        }
+      }
+      .webcams-wrapper {
+        @apply border-b border-gray-300  pb-12 mb-12;
+        .webcam-wrapper {
+          @apply mb-6;
+          &:last-child {
+            @apply mb-0;
+          }
+        }
+      }
+      .forecasts-table-wrapper {
+        @apply mb-12;
+      }
+      .snow-condition-table-wrapper {
+        @apply mb-8;
+      }
+      .observation-text-wrapper {
+        @apply text-sm leading-6 mt-0 mb-8;
+        strong {
+          @apply font-bold;
+        }
+        small {
+          @apply text-xs block mt-2 text-gray-500;
+        }
+      }
+      .buttons {
+        a {
+          @apply mr-4;
+        }
+      }
+    }
+  }
+}

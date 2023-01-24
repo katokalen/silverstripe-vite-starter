@@ -1,0 +1,105 @@
+.columned-content {
+  @apply text-slate;
+
+  /* Padding Top Values - more flexible, we can set our own instead of changing the schema every time */
+  &.padding-t-xs {
+    @apply pt-4;
+  }
+  &.padding-t-s {
+    @apply pt-8;
+  }
+  &.padding-t-m {
+    @apply pt-10;
+  }
+  &.padding-t-l {
+    @apply pt-8 sm:pt-16;
+  }
+  &.padding-t-xl {
+    @apply pt-10 sm:pt-20;
+  }
+  &.padding-t-xxl {
+    @apply pt-16 sm:pt-32;
+  }
+
+  /* Padding Bottom Values - more flexible, we can set our own instead of changing the schema every time */
+  &.padding-b-xs {
+    @apply pb-4;
+  }
+  &.padding-b-s {
+    @apply pb-8;
+  }
+  &.padding-b-m {
+    @apply pb-10;
+  }
+  &.padding-b-l {
+    @apply pb-10 sm:pb-16;
+  }
+  &.padding-b-xl {
+    @apply pb-10 sm:pb-20;
+  }
+  &.padding-b-xxl {
+    @apply pb-16 sm:pb-32;
+  }
+  .wrapper {
+    @apply container;
+  }
+  figure {
+    @apply mb-4 md:mb-0;
+  }
+  @screen md {
+    .desktop-grid-cols-1 {
+      @apply grid-cols-1;
+    }
+    .desktop-grid-cols-2 {
+      @apply grid-cols-2;
+    }
+    .desktop-grid-cols-3 {
+      @apply grid-cols-3;
+    }
+    .desktop-grid-cols-4 {
+      @apply grid-cols-4;
+    }
+  }
+  .column {
+    @apply px-2;
+
+    /* Column specific top padding */
+    &.col-padding-t-xs {
+      @apply pt-4;
+    }
+    &.col-padding-t-s {
+      @apply pt-8;
+    }
+    &.col-padding-t-m {
+      @apply pt-12;
+    }
+    &.col-padding-t-l {
+      @apply pt-12 sm:pt-16;
+    }
+
+    /* Column Vertical Align */
+    &.col-v-align-top {
+      @apply self-start;
+    }
+    &.col-v-align-center {
+      @apply self-center;
+    }
+
+    /* Column Horizontal Align */
+    &.col-text-left {
+      @apply text-left;
+    }
+    &.col-text-center {
+      @apply text-center;
+    }
+    &.col-text-right {
+      @apply text-right;
+    }
+    iframe {
+      @apply max-w-full;
+    }
+  }
+  .image-modal-trigger {
+    @apply w-full h-full relative;
+  }
+}

@@ -1,0 +1,102 @@
+/* *
+* NOTE: The styling is different for these accordions on mobile then our other ones
+(different text treatment, different icons, etc) so I've nested the accordion styling inside of
+.horizontal-tabs for this treatment. If it's used anywhere else feel free to move and rename
+*/
+.horizontal-tabs {
+  @apply pt-12 pb-12 lg:pt-24 lg:pb-24;
+
+  /* Tab Nav & Slider are only for desktop, mobile is below */
+  .tab-nav-container {
+    @apply container hidden lg:block;
+  }
+  .tab-nav {
+    @apply hidden lg:flex h-auto relative flex-row;
+    &::after {
+      height: 2px;
+      @apply w-full bg-slate absolute bottom-0 -z-1;
+
+      content: "";
+    }
+  }
+  .tab-button {
+    @apply text-gray-500 relative text-center m-0 flex-auto py-2.5 px-5;
+
+    transition: all 0.3s ease-in-out;
+    &.tab-active {
+      @apply text-slate;
+    }
+  }
+  .slider {
+    @apply absolute left-0 bottom-0 border-b-2 border-red-light;
+  }
+
+  /* Wrapper for content - used on both mobile & desktop */
+  .content-container {
+    @apply container overflow-hidden relative;
+  }
+  .content {
+    @apply md:flex md:justify-between;
+    .wysiwyg div > p:first-of-type {
+      @apply mt-0;
+    }
+  }
+  .right-rail {
+    @apply pb-10 md:pb-0 md:pr-10 lg:mt-16;
+  }
+
+  /* Overrides for Nested content types - columned Content */
+
+  /* don't set a max-width on this content, it already has a container around it */
+  .columned-content .wrapper {
+    @apply max-w-none pl-0 pr-0;
+  }
+  .rich-text-block {
+    @apply lg:w-4/5;
+  }
+
+  /* Overrides for Nested content types - Accordions */
+  .left-side > .accordion-container {
+    @apply lg:mt-8;
+  }
+  .accordion-container {
+    @apply lg:px-0;
+  }
+  .accordion-closed .content {
+    @apply overflow-hidden max-h-0;
+
+    transition: all 0.3s;
+  }
+  .accordion-wrapper {
+    @screen lg {
+      @apply absolute top-0;
+    }
+  }
+
+  /* Mobile Styling */
+
+  /* Don't style this - used to calculate the height for animation
+  .accordion-wrapper {} */
+  .accordion {
+    @apply border-b lg:border-0;
+  }
+  .accordion-button {
+    @apply flex pt-6 pb-6 w-full justify-between lg:hidden;
+  }
+  .button-label {
+    @apply uppercase font-bold text-xl;
+  }
+
+  /* Open State */
+  .icon-chevronDown {
+    @apply inline-block relative;
+
+    transition: transform 150ms ease-in-out;
+    svg path {
+      @apply text-red-light;
+    }
+  }
+  .accordion-open .icon-chevronDown {
+    @apply rotate-180;
+  }
+}

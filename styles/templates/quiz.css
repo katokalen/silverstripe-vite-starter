@@ -1,0 +1,54 @@
+.quiz {
+  &-button-container {
+    @apply flex justify-between mt-8;
+    .columns {
+      @apply flex w-full flex-wrap;
+      .column {
+        @apply w-full sm:w-1/2 md:w-7/12 flex items-center;
+        a,
+        button {
+          @apply mr-4;
+        }
+        &:nth-child(2) {
+          @apply flex mt-4 sm:w-1/2 md:justify-end md:w-5/12 sm:mt-0;
+          &.results {
+            @apply sm:justify-end;
+            button {
+              @apply mr-0;
+            }
+          }
+          a {
+            &:last-child {
+              @apply mr-0;
+            }
+            span {
+              @apply text-white;
+            }
+            &.disabled {
+              @apply cursor-default opacity-80;
+            }
+          }
+          div {
+            @apply text-xs text-gray-700;
+          }
+        }
+      }
+    }
+  }
+  &-animate {
+    &-enter {
+      opacity: 0;
+    }
+    &-enter-active {
+      opacity: 1;
+      transition: opacity 200ms;
+    }
+    &-exit {
+      opacity: 1;
+    }
+    &-exit-active {
+      opacity: 0;
+      transition: opacity 200ms;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+/* We are using Tailwind Forms Plugin for any form fields
+* Use this file for anything like global form field focus states or error states as needed
+ */
+
+/* @tailwind base;
+@layer base {
+  [type="text"] {
+    border-color: red;
+  }
+} */

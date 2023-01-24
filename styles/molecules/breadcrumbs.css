@@ -1,0 +1,30 @@
+.breadcrumbs {
+  @apply bg-black text-white text-sm py-6 px-4 md:px-8;
+  ul {
+    @apply flex items-center lg:container;
+    li {
+      @apply flex items-center;
+      &:last-child {
+        @apply font-bold;
+      }
+      a:hover {
+        @apply underline;
+      }
+      &.active {
+        @apply hidden lg:inline-block;
+      }
+    }
+  }
+  .icon-chevronRight svg {
+    @apply w-4 h-4 mx-1 hidden lg:inline-block;
+  }
+  .icon-arrowLeft {
+    @apply lg:hidden;
+  }
+  .icon-arrowLeft svg path {
+    @apply text-red;
+  }
+  #breadcrumb-item-0 {
+    @apply hidden lg:inline-block;
+  }
+}

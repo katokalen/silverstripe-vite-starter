@@ -1,0 +1,305 @@
+/* Global Header */
+.header {
+  @apply w-full top-0 bg-white py-4 md:py-5 sticky;
+
+  transition: 0.3s ease-out;
+}
+.header-container {
+  @apply flex relative items-center;
+}
+.header-logo-link {
+  @apply pl-4 xs:px-4 md:px-8;
+  svg {
+    @apply max-w-[106px] xs:max-w-none;
+  }
+  svg path {
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
+    fill: #0d0d0e;
+    &.peak {
+      fill: #db1915;
+    }
+  }
+}
+.mobile-menu-active {
+  @apply bg-slate;
+
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
+  .header-logo-link {
+    @apply z-5;
+    svg path {
+      fill: #e6e7ec;
+      &.peak {
+        fill: #e6e7ec;
+      }
+    }
+  }
+}
+@media (max-width: 1023px) {
+  .header.book-now-active {
+    @apply bg-slate;
+
+    transition-duration: 0.5s;
+    .header-logo-link {
+      @apply z-5;
+      svg path {
+        fill: #e6e7ec;
+        &.peak {
+          fill: #e6e7ec;
+        }
+      }
+    }
+    .hamburger {
+      .bars {
+        @apply text-white;
+      }
+    }
+  }
+}
+
+/* Sticky State once user starts to scroll */
+.header-scrolled {
+  @apply py-2 md:py-3 border-gray-200 border-b fixed;
+
+  /* Book now panel & menu panel needs their position adjusted slightly for scrolled state */
+  .menu-panel,
+  .book-now-panel {
+    @apply top-[3.3rem] lg:top-14 ;
+  }
+}
+
+/* Desktop Nav */
+.main-nav {
+  @apply flex justify-end lg:justify-between w-full px-4 md:px-8 items-center;
+  .mobile-menu-active & {
+    @apply z-5;
+  }
+}
+.menu-container {
+  @apply hidden lg:block;
+  ul {
+    @apply flex items-baseline;
+  }
+}
+.menu-large-links {
+  @apply mb-9 md:mb-0 md:w-7/12;
+  .item {
+    @apply mb-5 md:mb-10;
+  }
+  .link {
+    @apply font-normal;
+  }
+  .link svg {
+    @apply h-4 lg:h-7 opacity-0;
+
+    transition: 0.3s ease-out;
+  }
+  .link:hover {
+    @apply no-underline text-white;
+    svg {
+      @apply text-red-light opacity-100;
+    }
+  }
+  svg {
+    display: inline;
+  }
+}
+.menu-panel-parent {
+  @apply md:px-4;
+  .icon-chevronDown {
+    @apply inline-block relative top-1 left-1;
+
+    transition: transform 250ms ease-out;
+  }
+  &.active {
+    .icon-chevronDown {
+      @apply rotate-180;
+    }
+  }
+}
+.menu-panel-link {
+  @apply uppercase text-base font-bold;
+}
+.header-utility {
+  @apply flex items-center;
+  @media (max-width: 420px) {
+    .btn-book-now {
+      padding: 0.625rem;
+      font-size: 0.9rem;
+    }
+  }
+  .btn-conditions {
+    @apply relative;
+    a {
+      @apply w-[52px] h-[44px] flex items-center justify-center bg-gray-200 mr-2;
+      &::before {
+        @apply bg-gray-300 absolute w-0 inset-0 content-[""];
+
+        transition: 0.3s ease-out;
+      }
+      &:hover {
+        &::before {
+          @apply w-[52px];
+        }
+        svg {
+          @apply relative;
+        }
+      }
+    }
+  }
+}
+.menu-panel {
+  @apply absolute top-16 left-0 w-full hidden h-0;
+
+  background: linear-gradient(315deg, #414141 0%, #222328 74%);
+  p {
+    @apply m-0;
+  }
+  &__bottom {
+    @apply border-t border-[rgba(255,255,255,0.25)] border-solid;
+    .btn-text svg path {
+      @apply fill-white;
+    }
+  }
+  &__contact {
+    &--phone-hours {
+      span {
+        @apply font-normal text-xs;
+      }
+    }
+  }
+}
+
+/* Book Now panel */
+.book-now-panel {
+  @apply absolute top-[3.7rem] lg:top-16 left-0 w-full text-white hidden h-0 pb-32 sm:pb-0 overflow-x-auto;
+
+  height: 100vh !important;
+  @screen lg {
+    height: auto !important;
+  }
+
+  background: linear-gradient(315deg, #414141 0%, #222328 74%);
+  .btn-conversion {
+    span {
+      @apply w-full;
+    }
+  }
+  .book-now-panel__top {
+    @apply pt-8 lg:pt-24 z-10 relative;
+    h2 {
+      @apply mb-6 lg:mb-12;
+    }
+    h3 {
+      @apply font-medium pb-0 text-white;
+    }
+    h6 {
+      @apply opacity-80 font-medium hidden sm:block;
+    }
+    select {
+      @apply block w-full sm:w-72 mr-5 mb-5 text-gray-700 h-12 border-0;
+    }
+    #start-date,
+    #end-date {
+      @apply relative block w-full sm:w-44 text-gray-700 h-12 border-0 bg-transparent z-1;
+    }
+    .btn-conversion {
+      @apply h-12 mb-2 sm:mb-5 w-full text-center;
+    }
+    .menu-large-links {
+      @apply text-gray-300 flex-col mt-6 sm:mt-14 hidden lg:block;
+    }
+    .book-now-panel__dates {
+      @apply relative z-10;
+    }
+    .DateInput_1 {
+      @apply bg-white mb-5 sm:mr-5 after:top-3 after:right-4 after:absolute after:w-6 after:h-6 after:z-0;
+      &:nth-of-type(1) {
+        @apply mr-[2%] sm:mr-5;
+      }
+    }
+  }
+  .menu-panel__bottom {
+    @apply text-white py-5 border-t border-[rgba(255,255,255,0.25)] border-solid;
+  }
+  .book-now-panel__bottom {
+    @apply block lg:hidden border-none py-0;
+    .book-now-cta {
+      @apply border-t border-gray-300 border-solid mt-0 pt-4;
+    }
+    .btn-ghost svg path {
+      @apply fill-white;
+    }
+    .btn-ghost:hover svg path {
+      @apply fill-black;
+    }
+  }
+}
+
+/* Mobile Nav */
+.hamburger {
+  @apply lg:hidden;
+  .icon-close {
+    @apply hidden;
+  }
+  &.active {
+    .bars {
+      @apply hidden;
+    }
+    .icon-close {
+      @apply block;
+      svg {
+        @apply w-10 h-10 ml-2 -mr-1;
+      }
+    }
+  }
+}
+.mobile-nav {
+  @apply absolute -top-4 left-0 w-full h-screen bg-slate hidden pt-[100px] z-2 overflow-x-scroll;
+  .menu-large-links {
+    @apply w-full border-b border-gray-300 border-solid pb-2 mb-8;
+    .link {
+      @apply uppercase mb-0;
+    }
+    .link svg {
+      @apply opacity-100;
+    }
+    .link .icon-chevronDown {
+      transition: transform 250ms ease-out;
+      svg {
+        @apply w-6 h-6;
+      }
+    }
+    .link.active .icon-chevronDown {
+      @apply rotate-180;
+    }
+  }
+  .btn-ghost svg path {
+    @apply fill-white;
+  }
+  .btn-ghost:hover svg path {
+    @apply fill-black;
+  }
+}
+.mobile-subnav {
+  @apply opacity-0 hidden h-0;
+  li {
+    @apply pl-2 pt-2;
+    &:last-child {
+      @apply pb-2;
+    }
+    &:first-child {
+      @apply pt-4;
+    }
+    a {
+      @apply text-lg;
+    }
+  }
+}
+.mobile-nav-secondary {
+  @apply pt-8 pb-32 sm:py-8;
+  .item {
+    @apply mb-3;
+  }
+}

@@ -1,0 +1,212 @@
+/* Links/Buttons/CTA styles
+
+All types have optional Icon
+
+.btn-primary Variations: default size (med) / small size / inverted color / inverted color & small size
+.btn-conversion Variations: default size (med) / small size
+.btn-ghost Variations: default size (med) / small size / inverted color / inverted color & small size
+.btn-text Variations: default size (med) / small size / inverted color / inverted color & small size
+.back-btn - different padding, icon to left, smaller text
+*/
+.btn-primary {
+  @apply bg-slate text-white text-base inline-flex items-center py-2.5 px-4 font-semibold relative;
+
+  transition: 0.3s ease-out;
+  &.small {
+    @apply text-sm py-2;
+  }
+  &.icon-on-left {
+    svg {
+      @apply ml-0 mr-1 z-2;
+    }
+    &:hover {
+      svg {
+        @apply -translate-x-1;
+      }
+    }
+  }
+  svg {
+    @apply ml-1 z-2;
+
+    transition: 0.3s ease-out;
+    path {
+      @apply fill-red-light;
+    }
+  }
+  span,
+  a {
+    @apply z-2;
+  }
+  &::before {
+    @apply bg-gray-700 absolute w-0 inset-0 content-[""];
+
+    transition: 0.3s ease-out;
+  }
+  &:hover {
+    &::before {
+      @apply w-full;
+    }
+    svg {
+      @apply translate-x-1;
+    }
+  }
+  &.inverted {
+    @apply bg-white text-slate;
+    &::before {
+      @apply bg-gray-300;
+    }
+  }
+  &:disabled {
+    @apply opacity-75;
+    &::before {
+      @apply hidden;
+      svg {
+        @apply translate-x-0;
+      }
+    }
+  }
+}
+.btn-conversion {
+  @apply bg-red-light text-white text-base inline-flex items-center py-2.5 px-4 font-semibold relative;
+
+  transition: 0.3s ease-out;
+  &.small {
+    @apply text-sm py-2;
+  }
+  svg {
+    @apply ml-1 z-2;
+
+    transition: 0.3s ease-out;
+    path {
+      @apply fill-white;
+    }
+  }
+  span,
+  a {
+    @apply z-2;
+  }
+  &::before {
+    @apply bg-red-dark absolute w-0 inset-0 content-[""];
+
+    transition: 0.3s ease-out;
+  }
+  &:hover {
+    &::before {
+      @apply w-full;
+    }
+    svg {
+      @apply translate-x-1;
+    }
+  }
+}
+.btn-ghost {
+  @apply border border-slate bg-white text-slate text-base inline-flex items-center py-2.5 px-4 font-semibold relative;
+  &.small {
+    @apply text-sm py-2;
+  }
+  &.icon-on-left {
+    svg {
+      @apply ml-0 mr-1 z-2;
+    }
+    &:hover {
+      svg {
+        @apply -translate-x-1;
+      }
+    }
+  }
+  svg {
+    @apply ml-1 z-2;
+
+    transition: 0.3s ease-out;
+    path {
+      @apply fill-red-light;
+    }
+  }
+  span,
+  a {
+    @apply z-2;
+  }
+  &::before {
+    @apply bg-slate absolute w-0 inset-0 content-[""];
+
+    transition: 0.3s ease-out;
+  }
+  &:hover {
+    &::before {
+      @apply w-full;
+    }
+    span,
+    a {
+      @apply text-white;
+    }
+    svg {
+      @apply translate-x-1;
+    }
+  }
+  &.inverted {
+    @apply border border-white bg-transparent text-white;
+    &::before {
+      @apply bg-white;
+    }
+    &:hover {
+      span,
+      a {
+        @apply text-slate;
+      }
+    }
+  }
+}
+.btn-text {
+  @apply text-slate text-base inline-flex items-center py-2.5 px-0 font-semibold;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      currentcolor calc(100% / 3),
+      transparent 0 calc(200% / 3),
+      currentcolor 0
+    );
+  background-position: 100% 90%;
+  background-size: 300% 2px;
+  background-repeat: no-repeat;
+  transition: 0.5s;
+  &.small {
+    @apply text-sm py-2;
+  }
+  &.inverted {
+    @apply bg-transparent text-white;
+  }
+  svg {
+    @apply ml-1 z-2;
+
+    transition: 0.3s ease-out;
+    path {
+      @apply fill-red-light;
+    }
+  }
+  &:hover {
+    background-position: 0 90%;
+    svg {
+      @apply translate-x-1;
+    }
+  }
+}
+.btn-back {
+  @apply border border-slate bg-white text-slate text-xs inline-flex items-center py-1.5 px-4 font-semibold;
+
+  transition: 0.3s ease-out;
+  svg {
+    @apply mr-1;
+
+    transition: 0.3s ease-out;
+  }
+  &:hover {
+    @apply bg-slate text-white;
+    svg {
+      @apply -translate-x-1;
+      path {
+        @apply fill-red-light;
+      }
+    }
+  }
+}

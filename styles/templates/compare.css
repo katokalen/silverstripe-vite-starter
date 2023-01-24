@@ -1,0 +1,182 @@
+.compare {
+  @apply text-slate;
+  .compare-row {
+    @apply grid gap-6 grid-cols-2 md:grid-cols-3 mb-7;
+    ul {
+      @apply list-disc ml-5;
+    }
+    .compare-lodging ul {
+      @apply ml-0 mr-2;
+    }
+
+    /* Sticky dropdowns */
+    &.dropdowns {
+      @apply sticky top-14 md:top-16 bg-white py-5 z-5;
+      select {
+        @apply border-0 border-b-2 p-0 w-full;
+      }
+    }
+
+    /* Third column - hide on mobile */
+    div[class*="compare-"] {
+      &:nth-of-type(3) {
+        @apply hidden md:block;
+      }
+    }
+  }
+  .section-heading {
+    @apply border-b-2 border-solid border-gray-200 pb-3 mb-10 text-slate;
+  }
+  .compare-summary {
+    @apply mb-8;
+    p {
+      @apply lg:mx-4;
+    }
+    .buttons {
+      @apply lg:mx-4 flex flex-col 2lg:flex-row;
+      .btn-primary {
+        @apply 2lg:mr-4 mb-4 2lg:mb-0;
+      }
+    }
+  }
+  .compare-great-for {
+    @apply lg:mx-4 mb-8;
+    ul {
+      li {
+        @apply font-bold;
+      }
+    }
+  }
+  .compare-ability-pace {
+    @apply lg:mx-4 mb-8;
+    .cmh-icon {
+      @apply block mb-6;
+    }
+    dl {
+      dt {
+        @apply font-bold;
+      }
+      dd {
+        @apply mb-6;
+        &:last-child {
+          @apply mb-0;
+        }
+      }
+    }
+  }
+  .compare-terrain {
+    @apply lg:mx-4 mb-8;
+    .terrain-details {
+      @apply mb-6;
+      p {
+        @apply text-xl font-semibold m-0 pb-2;
+      }
+    }
+  }
+  .compare-area-size {
+    @apply lg:mx-4 mb-8;
+    .area-size-details {
+      @apply mb-6;
+      p {
+        @apply text-xl font-semibold m-0 pb-2;
+      }
+    }
+    dl {
+      dt {
+        @apply font-bold;
+      }
+      dd {
+        @apply mb-6;
+        &:last-child {
+          @apply mb-0;
+        }
+      }
+    }
+  }
+  .compare-heliski-groups {
+    @apply lg:mx-4 mb-8;
+    .heliski-groups-details {
+      @apply mb-6;
+      p {
+        @apply m-0 pb-2;
+        &:first-child {
+          @apply font-semibold text-xl;
+        }
+      }
+    }
+    dl {
+      dt {
+        @apply font-bold;
+      }
+      dd {
+        @apply mb-6;
+        &:last-child {
+          @apply mb-0;
+        }
+      }
+    }
+  }
+  .compare-programs {
+    @apply lg:mx-4 mb-2;
+    .programs-details {
+      @apply mb-6;
+      p {
+        @apply text-xl font-semibold m-0 pb-2;
+      }
+    }
+    p {
+      @apply mt-0 mb-3;
+    }
+  }
+  .programs-callout {
+    @apply mt-8 mb-16;
+  }
+  .compare-getting-here {
+    @apply lg:mx-4 mb-8;
+    dl {
+      @apply mb-6;
+      dt {
+        @apply font-bold;
+      }
+      dd {
+        p {
+          @apply m-0;
+        }
+        &:last-child {
+          @apply mb-0;
+        }
+      }
+    }
+  }
+  .compare-lodging {
+    @apply lg:mx-4 mb-8;
+    h3 {
+      @apply text-xl;
+    }
+    h4 {
+      @apply text-lg;
+    }
+    .video-tour {
+      @apply h-20;
+    }
+    ul {
+      @apply max-w-xs mb-8;
+      li {
+        @apply flex justify-between leading-8;
+        &.line {
+          @apply bg-gray-200 h-[2px] w-full my-3;
+        }
+        svg path {
+          @apply fill-slate;
+        }
+      }
+    }
+
+    /* Purcell destination has no lodge, formatting is different */
+    &.purcell {
+      .video-tour {
+        @apply hidden;
+      }
+    }
+  }
+}

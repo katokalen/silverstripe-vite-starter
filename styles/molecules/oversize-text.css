@@ -1,0 +1,16 @@
+.oversize-text {
+  @apply py-4 px-0 lg:py-12 overflow-hidden;
+  &.overlap-above {
+    @apply pt-0 -mt-7;
+  }
+  &.overlap-below {
+    @apply pt-0 -mb-7;
+  }
+  &.overlap-both {
+    @apply py-0 -mt-7 -mb-7;
+  }
+  .line-1,
+  .line-2 {
+    @apply text-gray-200 font-bold text-13xl md:text-14xl lg:text-15xl uppercase whitespace-nowrap;
+  }
+}

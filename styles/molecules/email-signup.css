@@ -1,0 +1,12 @@
+.email-signup {
+  @apply bg-white py-12 my-8 overflow-hidden;
+  .heading {
+    @apply xl:text-10xl;
+  }
+  .email-signup-cols {
+    @apply lg:flex lg:items-center;
+  }
+  .email-signup-photo {
+    @apply md:w-1/2;
+  }
+}

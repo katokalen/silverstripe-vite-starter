@@ -1,0 +1,43 @@
+.conditions-forecast-table {
+  @apply table-fixed w-full;
+  tr {
+    @apply flex border-b border-gray-300;
+    &:first-child {
+      @apply border-none;
+      th,
+      td {
+        @apply py-0;
+      }
+    }
+    & > *:nth-child(2) {
+      @apply hidden sm:block;
+    }
+  }
+  th {
+    @apply flex-col w-1/3 sm:w-1/4 font-normal;
+    i {
+      @apply mt-4 block sm:hidden;
+    }
+  }
+  th,
+  td {
+    @apply flex text-base items-start py-6;
+  }
+  td {
+    @apply w-1/3 sm:w-1/4;
+    &:last-child {
+      @apply w-2/3 sm:w-1/2 grid grid-cols-2;
+    }
+  }
+  .legends-columns {
+    div {
+      @apply w-1/2 font-bold;
+    }
+  }
+  .forecast-temp-summary {
+    @apply text-base xs:text-xl font-semibold;
+  }
+  .forecast-text-summary {
+    @apply col-span-full text-sm w-full pt-3 leading-6;
+  }
+}

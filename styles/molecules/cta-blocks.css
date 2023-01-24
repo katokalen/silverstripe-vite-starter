@@ -1,0 +1,62 @@
+.cta-blocks-container {
+  @apply container px-2 lg:px-8;
+}
+.cta-blocks {
+  @apply py-2 lg:py-10 flex flex-wrap;
+  .tile {
+    @apply mb-4 lg:mb-2;
+    @screen md {
+      width: 50%;
+      max-width: 50%;
+    }
+    .tile-inner {
+      @apply h-full m-2;
+    }
+    .tile-image {
+      @apply bg-white bg-cover p-4 pb-2 sm:p-7 sm:pb-0;
+
+      margin-bottom: -2rem;
+    }
+    .tile-content {
+      @apply p-7 pt-10 sm:p-14 sm:pb-4;
+      p {
+        @apply text-gray-200;
+      }
+      &.text-light {
+        > * {
+          @apply text-white;
+        }
+        p {
+          @apply text-gray-200;
+        }
+      }
+      &.text-dark {
+        > * {
+          @apply text-slate;
+        }
+      }
+    }
+    img {
+      transition: transform 300ms ease-in-out;
+    }
+    .icon-wrapper {
+      @apply text-right;
+    }
+    .icon-arrowRight {
+      transition: padding 500ms ease;
+      display: inline-block;
+      @apply pr-1;
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+      .icon-arrowRight {
+        @apply pr-0;
+        svg path {
+          fill: theme("colors.red.light");
+        }
+      }
+    }
+  }
+}

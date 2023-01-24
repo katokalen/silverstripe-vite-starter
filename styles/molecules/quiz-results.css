@@ -1,0 +1,52 @@
+.quiz-results {
+  .columns {
+    @apply flex items-end py-12 border-b border-gray-300 flex-wrap;
+    .column {
+      &:first-child {
+        @apply xl:w-7/12 lg:w-1/2 pr-8;
+      }
+      &:nth-child(2) {
+        @apply w-1/3 mt-4 xl:w-1/12 lg:w-1/6 lg:mt-0 text-sm;
+        input {
+          @apply mr-2;
+        }
+      }
+      &:nth-child(3) {
+        @apply w-full mt-4 xl:w-4/12 lg:w-2/6 xl:flex xl:flex-row lg:justify-end lg:mt-0;
+        a {
+          @apply mr-4 mb-4 md:mb-0;
+          &:last-child {
+            @apply lg:mt-4 mr-0 xl:mt-0;
+          }
+        }
+      }
+    }
+  }
+  .quiz-results-title-container {
+    @apply pt-10;
+    h1 {
+      @apply font-normal;
+    }
+    p {
+      @apply m-0 text-lg;
+    }
+  }
+  .quiz-results-item-description {
+    @apply text-lg text-gray-800;
+  }
+  .quiz-results-item-programs {
+    @apply mb-0;
+    .programs-title {
+      @apply text-base mb-2 font-semibold block text-slate;
+    }
+    .programs {
+      @apply flex items-center;
+    }
+    .program {
+      @apply mr-2 text-sm text-gray-800 flex items-center;
+    }
+    .dot {
+      @apply ml-2 text-4xl h-1 w-1 rounded-full bg-slate;
+    }
+  }
+}
