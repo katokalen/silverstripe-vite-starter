@@ -1,20 +1,20 @@
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
-import liveReload from 'vite-plugin-live-reload'
 import copy from 'rollup-plugin-copy'
-import serve from 'rollup-plugin-serve'
 import path from 'path'
+// import liveReload from 'vite-plugin-live-reload'
+// import serve from 'rollup-plugin-serve'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   mode: 'development',
   plugins: [
-    liveReload([
-      // edit live reload paths according to your source code
-      // for example:
-      __dirname + '/(images|scripts)/**/*.*',
-      __dirname + '/styles/**/*.css',
-      __dirname + '/src/public/*.html',
-    ]),
+    // liveReload([
+    //   // edit live reload paths according to your source code
+    //   // for example:
+    //   __dirname + '/(images|scripts)/**/*.*',
+    //   __dirname + '/styles/**/*.css',
+    //   __dirname + '/src/public/*.html',
+    // ]),
     splitVendorChunkPlugin(),
   ],
 
@@ -24,10 +24,8 @@ export default defineConfig({
     devSourcemap: true
   },
   build: {
-    // output dir for production build
-    // assetsDir: 'blah3',
     emptyOutDir: false,
-    minify: false,
+    minify: 'esbuild',
     outDir: "",
     rollupOptions: {
       input: {
@@ -52,28 +50,25 @@ export default defineConfig({
       plugins: [
         copy({
           targets: [
-            { src: '../images/**/*', dest: 'src/public/images' }
+            { src: 'images/**/*', dest: 'src/public/images' }
           ]
         }),
-        serve('src/public')
+        //serve('src/public')
       ]
     },
     sourcemap: true,
     manifest: true
   },
 
-  server: {
-    strictPort: true,
-    port: 5133,
-    open: '/',
-    https: false,
-    proxy: {
-      '*': {
-        target: "http://localhost:5133"
-      }
-    }
-  },
-
-  // required for in-browser template compilation
-  // https://vuejs.org/guide/scaling-up/tooling.html#note-on-in-browser-template-compilation
+  // server: {
+  //   strictPort: true,
+  //   port: 5133,
+  //   open: '/',
+  //   https: false,
+  //   proxy: {
+  //     '*': {
+  //       target: "http://localhost:5133"
+  //     }
+  //   }
+  // },
 })
