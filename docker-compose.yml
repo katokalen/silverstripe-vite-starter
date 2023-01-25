@@ -1,6 +1,5 @@
-version: '3.9'
+version: "3.9"
 services:
-
   web:
     # PHP version should match version in .platform.yml and composer.json
     image: brettt89/silverstripe-web:8.1-apache
@@ -29,18 +28,10 @@ services:
     environment:
       - NODE_ENV=development
       - VITE_ENVIRONMENT=development
-    env_file:
-      - .env
     volumes:
       - ./:/home/node/app:cached
-      - '.:/node_modules'
     ports:
-      - '5173:5173'
-    expose:
-      - '5173'
+      - "8080-8081:8080-8081"
     links:
       - "web"
     command: bash -c "yarn install; npx browserslist@latest --update-db; yarn build; yarn start-docker"
-
-volumes:
-  node_modules:
