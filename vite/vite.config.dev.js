@@ -1,8 +1,7 @@
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
-import copy from 'rollup-plugin-copy'
-import path from 'path'
+import { defineConfig, splitVendorChunkPlugin } from 'vite';
+import copy from 'rollup-plugin-copy';
+import path from 'path';
 // import liveReload from 'vite-plugin-live-reload'
-// import serve from 'rollup-plugin-serve'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -29,8 +28,9 @@ export default defineConfig({
     outDir: "",
     rollupOptions: {
       input: {
-        "main": path.resolve(__dirname, '../scripts/main.js'),
-        "style": path.resolve(__dirname, '../styles/style.css'),
+        "bundle": path.resolve(__dirname, '../scripts/main.js'),
+        "editor": path.resolve(__dirname, '../scripts/editor.js'),
+        "oyr": path.resolve(__dirname, '../styles/oyr.css'),
       },
       output: {
         assetFileNames: (assetInfo) => {
@@ -52,8 +52,7 @@ export default defineConfig({
           targets: [
             { src: 'images/**/*', dest: 'src/public/images' }
           ]
-        }),
-        //serve('src/public')
+        })
       ]
     },
     sourcemap: true,
@@ -71,4 +70,4 @@ export default defineConfig({
   //     }
   //   }
   // },
-})
+});

@@ -1,19 +1,11 @@
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
-import liveReload from 'vite-plugin-live-reload'
-import copy from 'rollup-plugin-copy'
-import path from 'path'
+import { defineConfig, splitVendorChunkPlugin } from 'vite';
+import copy from 'rollup-plugin-copy';
+import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   mode: 'development',
   plugins: [
-    liveReload([
-      // edit live reload paths according to your source code
-      // for example:
-      __dirname + '/(images|scripts)/**/*.*',
-      __dirname + '/styles/**/*.css',
-      __dirname + '/src/public/*.html',
-    ]),
     splitVendorChunkPlugin(),
   ],
 
@@ -24,14 +16,14 @@ export default defineConfig({
   },
   build: {
     // output dir for production build
-    // assetsDir: 'blah3',
     emptyOutDir: false,
-    minify: process.env.APP_ENV === 'development' ? false : 'esbuild',
+    minify: false,
     outDir: "",
     rollupOptions: {
       input: {
-        "main": path.resolve(__dirname, 'scripts/main.js'),
-        "style": path.resolve(__dirname, 'styles/style.css'),
+        "bundle": path.resolve(__dirname, '../scripts/main.js'),
+        "editor": path.resolve(__dirname, '../scripts/editor.js'),
+        "oyr": path.resolve(__dirname, '../styles/oyr.css'),
       },
       output: {
         assetFileNames: (assetInfo) => {
@@ -61,13 +53,11 @@ export default defineConfig({
   },
 
   server: {
-    // we need a strict port to match on PHP side
-    // change freely, but update on PHP to match the same port
-    // tip: choose a different port per project to run them at the same time
+    host: '0.0.0.0',
+    port: 8080,
     strictPort: true,
-    port: 5133
-  },
-
-  // required for in-browser template compilation
-  // https://vuejs.org/guide/scaling-up/tooling.html#note-on-in-browser-template-compilation
-})
+    watch: {
+      usePolling: true,
+    }
+  }
+});
